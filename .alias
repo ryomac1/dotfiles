@@ -1,0 +1,69 @@
+# alias
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ls='ls -a --color=auto'
+alias op="open ."
+alias opd="open ~/Downloads"
+
+
+# neovim
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias view="nvim -R"
+
+# python
+alias python="python3"
+alias py="python3"
+
+# rc file
+alias zshrc="v ~/.zshrc"
+alias tmuxrc="v ~/.tmux.conf"
+alias szsh="source ~/.zshrc"
+
+# open applications
+alias br="open /Applications/Brave\ Browser.app"
+alias nt="open /Applications/Notion.app"
+alias li="open /Applications/LINE.app"
+alias sl="open /Applications/Slack.app"
+alias setting='open -a "System Preferences"'
+# microsoft office
+# alias pp="open /Applications/Microsoft\ PowerPoint.app/"
+# alias wd="open /Applications/Microsoft\ Word.app/"
+# alias te="open /Applications/Microsoft\ Teams\ classic.app/"
+# alias excel="open /Applications/Microsoft\ Excel.app/"
+
+# VSCode, Command + Shift + P -> Shell Command: Install 'code' command in PATH
+alias vs="code"
+# Cursor, Command + Shift + P -> Shell Command: Install 'cursor' command in PATH
+alias cs="cursor"
+
+# github copilot for cli
+alias sug='gh copilot suggest'
+alias exp='gh copilot explain'
+
+# cpp関連
+alias g="g++ -std=c++23 -O2"
+alias a="./a.out"
+alias ga="g++ -std=c++23 -O2 a.cpp -o a.out && ./a.out"
+# python3関連
+alias pp="python3 a.py|pbcopy"
+alias p="python3"
+alias pa="python3 a.py"
+alias dp="python3 data.py|pbcopy"
+alias vp="v a.py"
+alias pc="cat a.py|pbcopy"
+alias vc="v a.cpp"
+# git関連
+alias gs='git status'
+alias gb='git branch'
+alias gc='git checkout'
+alias gct='git commit'
+alias gg='git grep'
+alias gd='git diff'
+alias gl='git log'
+
+# mac
+alias copy='pbcopy <'
+alias imgcat='imgcat --width $(tput cols)'
