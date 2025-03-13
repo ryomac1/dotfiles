@@ -36,6 +36,12 @@ ls_abbrev() {
     fi
 }
 
+# tarxzによる圧縮, tarxz $dirnameで.tar.xzが作成される
+tarxz() {
+    dirname=${1%/}
+    tar -cvJf $dirname.tar.xz $dirname
+}
+
 # cd to selected directory
 fd() {
   DIR=$(find * -maxdepth 0 -type d -print 2> /dev/null | fzf-tmux) \
@@ -111,6 +117,7 @@ function ifz() {
     imgcat "$selected_file"
   fi
 }
+
 # vfz - Open files in vim using fzf for selection
 vfz() {
   local file
@@ -119,7 +126,7 @@ vfz() {
 # fzfで検索してcursorで開く
 cfz() {
   local file
-  file=$(fzf) && cs "$file"
+  file=$(fzf) && cursor "$file"
 }
 # Select a docker container to start and attach to
 function da() {
@@ -135,4 +142,20 @@ function ds() {
   cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
 
   [ -n "$cid" ] && docker stop "$cid"
+}
+
+
+# windows向けにzipする
+function zipw ()
+{
+  if [ -z "$1" ] || [ "$1" = "." ]; then
+    # カレントディレクトリをZIPファイルに圧縮
+    local zip_name="$(basename $(pwd)).zip"
+    7z a -tzip "$zip_name" "$(pwd)"/*
+  else
+    # 指定したディレクトリをZIPファイルに圧縮
+    local target="$1"
+    local zip_name="$(basename "$target").zip"
+    7z a -tzip "$zip_name" "$target"/*
+  fi
 }

@@ -4,7 +4,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls -a --color=auto'
 alias op="open ."
-alias opd="open ~/Downloads"
+alias opd="open ~/Documents"
 
 
 # neovim
@@ -28,16 +28,17 @@ alias nt="open /Applications/Notion.app"
 alias li="open /Applications/LINE.app"
 alias sl="open /Applications/Slack.app"
 alias setting='open -a "System Preferences"'
+alias ff='osascript -e '\''tell application "Finder" to activate'\'''
 # microsoft office
-# alias pp="open /Applications/Microsoft\ PowerPoint.app/"
-# alias wd="open /Applications/Microsoft\ Word.app/"
-# alias te="open /Applications/Microsoft\ Teams\ classic.app/"
-# alias excel="open /Applications/Microsoft\ Excel.app/"
+alias pp="open /Applications/Microsoft\ PowerPoint.app/"
+alias wd="open /Applications/Microsoft\ Word.app/"
+alias excel="open /Applications/Microsoft\ Excel.app/"
+alias te='osascript -e '\''tell application "Microsoft Teams" to activate'\'''
 
 # VSCode, Command + Shift + P -> Shell Command: Install 'code' command in PATH
 alias vs="code"
 # Cursor, Command + Shift + P -> Shell Command: Install 'cursor' command in PATH
-alias cs="cursor"
+alias c="cursor ."
 
 # github copilot for cli
 alias sug='gh copilot suggest'
