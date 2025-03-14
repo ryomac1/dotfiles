@@ -159,3 +159,10 @@ function zipw ()
     7z a -tzip "$zip_name" "$target"/*
   fi
 }
+
+
+gg() {
+  search_term="$*"
+  search_url="https://www.google.com/search?q=${search_term}"
+  open -a "Brave Browser" "$search_url"
+}

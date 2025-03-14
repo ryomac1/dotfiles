@@ -1,6 +1,5 @@
 
-# RyeとCargoの環境変数を読み込む
-source "$HOME/.rye/env" # Ryeの設定を読み込む
+# Cargoの環境変数を読み込む
 source "$HOME/.cargo/env" # Cargoの設定を読み込む
 
 # PATHを通す
@@ -77,6 +76,8 @@ zinit light-mode for \
 zinit light zsh-users/zsh-autosuggestions
 ## Control + R で履歴検索
 zinit light zdharma/history-search-multi-word
+# コマンドラインの文字の色付け(シンタックスハイライト)
+zinit light zsh-users/zsh-syntax-highlighting
 
 # FZF設定
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"' # FZFのデフォルトコマンド

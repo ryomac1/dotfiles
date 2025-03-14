@@ -34,15 +34,6 @@ else
     echo -e "${GREEN}Nodebrew is already installed.${NO_COLOR}"
 fi
 
-# Install Rye
-if ! command -v rye &> /dev/null; then
-    echo -e "${YELLOW}Installing Rye...${NO_COLOR}"
-    curl -sSf https://rye-up.com/install.sh | bash
-    source "$HOME/.rye/env"
-else
-    echo -e "${GREEN}Rye is already installed.${NO_COLOR}"
-fi
-
 # Install uv
 if ! command -v uv &> /dev/null; then
     echo -e "${YELLOW}Installing uv...${NO_COLOR}"
@@ -51,15 +42,14 @@ else
     echo -e "${GREEN}uv is already installed.${NO_COLOR}"
 fi
 
-# Install Zinit
+# Zinit が未インストールの場合のみ最新のインストール方法でインストール
 if [ ! -f "$HOME/.local/share/zinit/zinit.git/zinit.zsh" ]; then
     echo -e "${YELLOW}Installing Zinit...${NO_COLOR}"
-    mkdir -p "$HOME/.local/share/zinit"
-    chmod g-rwX "$HOME/.local/share/zinit"
-    git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git"
+    bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 else
     echo -e "${GREEN}Zinit is already installed.${NO_COLOR}"
 fi
+
 
 # Install necessary Homebrew packages
 if ! brew list git &> /dev/null; then
@@ -107,4 +97,8 @@ if [ -n "$backup_message" ]; then
     echo -e "${YELLOW}$backup_message${NO_COLOR}"
 fi
 
-echo -e "${YELLOW}Please add any necessary settings to .zshrc${NO_COLOR}"
+
+
+echo -e "${GREEN}Installation is complete and symbolic links have been created.${NO_COLOR}"
+echo -e "${YELLOW}Please restart your terminal to apply the changes.${NO_COLOR}"
+

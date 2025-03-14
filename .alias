@@ -3,7 +3,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls -a --color=auto'
-alias op="open ."
+# alias op="open ."
 alias opd="open ~/Documents"
 
 
@@ -34,6 +34,8 @@ alias pp="open /Applications/Microsoft\ PowerPoint.app/"
 alias wd="open /Applications/Microsoft\ Word.app/"
 alias excel="open /Applications/Microsoft\ Excel.app/"
 alias te='osascript -e '\''tell application "Microsoft Teams" to activate'\'''
+alias op="osascript -e 'tell application \"Finder\"' -e 'activate' -e 'if (count of windows) is 0 then' -e 'make new Finder window to (POSIX file \"$(pwd)\")' -e 'else' -e 'tell application \"System Events\" to keystroke \"t\" using command down' -e 'set target of front window to (POSIX file \"$(pwd)\")' -e 'end if' -e 'end tell'"
+
 
 # VSCode, Command + Shift + P -> Shell Command: Install 'code' command in PATH
 alias vs="code"
@@ -61,7 +63,6 @@ alias gs='git status'
 alias gb='git branch'
 alias gc='git checkout'
 alias gct='git commit'
-alias gg='git grep'
 alias gd='git diff'
 alias gl='git log'
 
