@@ -3,9 +3,22 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls -a --color=auto'
-# alias op="open ."
-alias opd="open ~/Documents"
 
+# openを確実にタブで開く
+alias op="osascript -e 'tell application \"Finder\"' -e 'activate' -e 'if (count of windows) is 0 then' -e 'make new Finder window to (POSIX file \"$(pwd)\")' -e 'else' -e 'tell application \"System Events\" to keystroke \"t\" using command down' -e 'set target of front window to (POSIX file \"$(pwd)\")' -e 'end if' -e 'end tell'"
+
+# 書類を開く
+alias opd='osascript -e "
+tell application \"Finder\"
+    activate
+    if (count of windows) = 0 then
+        make new Finder window to (POSIX file \"$HOME/Documents\")
+    else
+        tell application \"System Events\" to keystroke \"t\" using command down
+        delay 0.1
+        set target of front window to (POSIX file \"$HOME/Documents\")
+    end if
+end tell"'
 
 # neovim
 alias v="nvim"
@@ -34,8 +47,6 @@ alias pp="open /Applications/Microsoft\ PowerPoint.app/"
 alias wd="open /Applications/Microsoft\ Word.app/"
 alias excel="open /Applications/Microsoft\ Excel.app/"
 alias te='osascript -e '\''tell application "Microsoft Teams" to activate'\'''
-alias op="osascript -e 'tell application \"Finder\"' -e 'activate' -e 'if (count of windows) is 0 then' -e 'make new Finder window to (POSIX file \"$(pwd)\")' -e 'else' -e 'tell application \"System Events\" to keystroke \"t\" using command down' -e 'set target of front window to (POSIX file \"$(pwd)\")' -e 'end if' -e 'end tell'"
-
 
 # VSCode, Command + Shift + P -> Shell Command: Install 'code' command in PATH
 alias vs="code"
@@ -50,6 +61,7 @@ alias exp='gh copilot explain'
 alias g="g++ -std=c++23 -O2"
 alias a="./a.out"
 alias ga="g++ -std=c++23 -O2 a.cpp -o a.out && ./a.out"
+
 # python3関連
 alias pp="python3 a.py|pbcopy"
 alias p="python3"
@@ -58,6 +70,7 @@ alias dp="python3 data.py|pbcopy"
 alias vp="v a.py"
 alias pc="cat a.py|pbcopy"
 alias vc="v a.cpp"
+
 # git関連
 alias gs='git status'
 alias gb='git branch'
