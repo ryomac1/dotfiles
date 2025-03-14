@@ -3,23 +3,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls -a --color=auto'
-
-# openを確実にタブで開く
-alias op="osascript -e 'tell application \"Finder\"' -e 'activate' -e 'if (count of windows) is 0 then' -e 'make new Finder window to (POSIX file \"$(pwd)\")' -e 'else' -e 'tell application \"System Events\" to keystroke \"t\" using command down' -e 'set target of front window to (POSIX file \"$(pwd)\")' -e 'end if' -e 'end tell'"
-
-# 書類を開く
-alias opd='osascript -e "
-tell application \"Finder\"
-    activate
-    if (count of windows) = 0 then
-        make new Finder window to (POSIX file \"$HOME/Documents\")
-    else
-        tell application \"System Events\" to keystroke \"t\" using command down
-        delay 0.1
-        set target of front window to (POSIX file \"$HOME/Documents\")
-    end if
-end tell"'
-
 # neovim
 alias v="nvim"
 alias vi="nvim"
@@ -36,6 +19,9 @@ alias tmuxrc="v ~/.tmux.conf"
 alias szsh="source ~/.zshrc"
 
 # open applications
+alias op="open ."
+alias opd="open ~/Documents"
+alias opdl="open ~/Downloads"
 alias br="open /Applications/Brave\ Browser.app"
 alias nt="open /Applications/Notion.app"
 alias li="open /Applications/LINE.app"
