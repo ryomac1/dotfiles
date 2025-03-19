@@ -1,0 +1,77 @@
+{
+	"初期テンプレート": {
+	"prefix": "include",
+	"body": [
+		"#include <bits/stdc++.h>",
+		"#pragma GCC optimize(\"O3\")",
+		"#pragma GCC optimize(\"unroll-loops\")",
+		"using namespace std;",
+		"#define rep(i, n) for (int i = 0; i < n; i++)",
+		"#define per(i, n) for (int i = n - 1; i >= 0; i--)",
+		"#define rep1(i, n) for (int i = 1; i <= n; i++)",
+		"#define per1(i, n) for (int i = n; i >= 1; i--)",
+		"#define repm(i, m, n) for (int i = m; i < n; i++)",
+		"typedef long long ll;",
+		"typedef unsigned long long ul;",
+		"typedef unsigned int ui;",
+		"void chmax(ll &a, ll b) { a = max(a, b); }",
+		"void chmin(ll &a, ll b) { a = min(a, b); }"
+	],
+	"description": "初期テンプレート"
+	},
+	"INF": {
+		"prefix": "inf",
+		"body": [
+			"const ll INF = 1e18;"
+		],
+	},
+	"1e9 + 7": {
+		"prefix": "mod",
+		"body": [
+			"const ll MOD = 1e9 + 7;"
+		],
+		"description": "MOD"
+	},
+	"998244353": {
+		"prefix": "mod",
+		"body": [
+			"const ll MOD = 998244353;"
+		],
+		"description": "MOD"
+	},
+	"List": {
+		"prefix": "li",
+		"body": [
+		  "vector<ll> a(n);",
+		  "rep(i, n) cin >> a[i];"
+		],
+		"description": "List"
+	  },
+	  "dp2D": {
+		"prefix": "dp",
+		"body": [
+		  "vector<vector<ll>> dp(n + 1, vector<ll>(m + 1, -INF));"
+		],
+		"description": "dp2D"
+	  },
+	  "vector": {
+		"prefix": "vec",
+		"body": [
+		  "vector<$1>"
+		],
+		"description": "vector"
+	  },
+	  "vector<vecotr<ll>": {
+		"prefix": "veve",
+		"body": [
+		  "vector<vector<ll>> $1(n, vector<ll>(m));"
+		],
+	  },
+	  "浮動小数点の表示": {
+		"prefix": "fix",
+		"body": [
+		  "cout << fixed << setprecision(10) << ans << endl;"
+		],
+		"description": "浮動小数点の表示"
+	  }
+}
