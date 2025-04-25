@@ -82,3 +82,5 @@ zinit light zsh-users/zsh-syntax-highlighting
 # FZF設定
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"' # FZFのデフォルトコマンド
 export FZF_DEFAULT_OPTS="--preview '[[ -d {} ]] && (tree -C {} | head -200) || (bat --style=numbers --color=always {})'" # FZFのデフォルトオプション
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
